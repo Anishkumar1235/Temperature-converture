@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temperature Converter</title>
+<style>
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 800px;
+  height: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 10px solid #c1889a;
+  background-color: #ae99a3;
+}
+
+input {
+  width: 150px;
+}
+
+.output {
+  font-size: 2000px;
+}
+
+.convert-btn {
+  display: block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #fc2504;
+  border: none;
+  color: #e6dbdb;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Temperature Converter</h1>
+  <p>Enter a temperature in Celsius:</p>
+  <input type="number" id="celsius" />
+  <p>The equivalent temperature in Fahrenheit is:</p>
+  <span id="fahrenheit"></span>
+  <p>The equivalent temperature in Kelvin is:</p>
+  <span id="kelvin"></span>
+  <button class="convert-btn" onclick="convertTemperatures()">Convert</button>
+</div>
+<script>
+function convertTemperatures() {
+  let celsius = parseFloat(document.getElementById("celsius").value);
+  let fahrenheit = (celsius * 9 / 5) + 32;
+  let kelvin = celsius + 273.15;
+
+  document.getElementById("fahrenheit").innerHTML = fahrenheit.toFixed(2) + " °F";
+  document.getElementById("kelvin").innerHTML = kelvin.toFixed(2) + " K";
+}
+</script>
+</body>
+</html>
